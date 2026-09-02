@@ -3,7 +3,7 @@ name: Deploy LearnSphere
 on:
   push:
     branches:
-      - main
+      - master
 
   workflow_dispatch:
 
@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
@@ -30,7 +30,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: '.'
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
